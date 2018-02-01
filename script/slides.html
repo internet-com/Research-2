@@ -152,26 +152,57 @@
      · 
   </footer>
 </section>
-<section id="为什么需要cosmos-sdk" class="slide level1">
-<h1>为什么需要Cosmos SDK？</h1>
+<section id="sdk的设计理念目标模块化权限控制" class="slide level3">
+<h3>SDK的设计理念&amp;目标：模块化&amp;权限控制</h3>
 <ul>
-<li>第一项</li>
-<li>第二项</li>
+<li>Object Capability Security Model
+<ul>
+<li>一维的区块链 VS 多维的区块链</li>
+<li>Golang的缺点</li>
+</ul></li>
+<li>Multistore: 多重存储格式
+<ul>
+<li>Patricia Trie &amp; IVAL Tree</li>
+</ul></li>
 </ul>
 </section>
-<section id="sdk架构" class="slide level1">
-<h1>SDK架构</h1>
+<section id="sdk核心组件" class="slide level3">
+<h3>SDK核心组件</h3>
 <ul>
-<li>Golang的新特性</li>
-<li>第四项</li>
+<li>Transactions &amp; messages</li>
+<li>Context &amp; Handlers
+<ul>
+<li>NewAnteHandler：在交易执行前扣除手续费&amp;检查合法性x/auth/ante.go</li>
+<li>NewHandler: x/auth:</li>
+<li>addRoute-&gt;AnteHandler-&gt;Handler-&gt;Mapper-&gt;Account(键值修改)</li>
+</ul></li>
 </ul>
 </section>
-<section id="设计理念" class="slide level1">
-<h1>设计理念</h1>
+<section id="可扩展部分" class="slide level3">
+<h3>可扩展部分</h3>
 <ul>
-<li>第五项</li>
-<li>第六项</li>
+<li>Stores &amp; Mappers
+<ul>
+<li>app/app.go</li>
+<li>capKeyMainStore*sdk.KVStoreKey</li>
+<li>capKeyIBCStore*sdk.KVStoreKey</li>
+<li>baseapp/baseapp.go: ABCI(CheckTx,DeliverTx…ValidateTx)</li>
+</ul></li>
 </ul>
+</section>
+<section id="已有库" class="slide level3">
+<h3>已有库</h3>
+<ul>
+<li>bank</li>
+<li>auth:sdk.Account:定义了基本接口函数Get,Set,GetAddress,Getcoin,SetCoin</li>
+</ul>
+</section>
+<section id="go-wire" class="slide level3">
+<h3>Go-wire</h3>
+<p>全新的编码方式</p>
+<p>sdk.Account:定义了基本接口函数 Get,Set,GetAddress,Getcoin,SetCoin auth.BaseAccount auth.AccountMapper</p>
+<p>an object capability system allows private agents to enter in contractual arrangements,mediated by a trusted third party. on the oter hand, blockchain allows the creation of synthetic third party becaused they are verified and need to be trusted. by combining the two, one can get a set of private agents to engage in a contract while only the parties can engage in the replication of states. while there is a dispute aroud the outcome of a contract, both parties preserve a shared registry, a shared record of histiry for state change purposed. blockchain has a flat control model(ACL like), which is centric on the account. how can we delegate authority of an account? is limited to multisig &amp;private key. OC has large affluence in the way we can control or distribute authority. we may grand the capability between times, under what condition. protocols amoung autonomous nodes+ verifiable distributed data structure</p>
+<p>linear blockchain&amp; OC allows you to issue permission on a P2P basis. secure applications: secure data 数字签名：secure money how to secure application? pass the value, not address</p>
 </section>
 <!-- {{{{ dzslides core
 #
