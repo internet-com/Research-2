@@ -166,15 +166,22 @@
 </ul></li>
 </ul>
 </section>
+<section id="object-capability-system" class="slide level3">
+<h3>object capability system</h3>
+<ul>
+<li>object capability system允许节点部署由可信第三方调停的智能合同。 在另一方面，区块链可以称为这个第三方，因为它们已被验证并被信任。</li>
+</ul>
+</section>
 <section id="sdk核心组件" class="slide level3">
 <h3>SDK核心组件</h3>
 <ul>
 <li>Transactions &amp; messages</li>
 <li>Context &amp; Handlers
 <ul>
+<li>baseapp/baseapp.go:ABCI(CheckTx,DeliverTx…ValidateTx)</li>
+<li>addRoute=&gt;AnteHandler=&gt;Handler=&gt;Mapper=&gt;Account(键值修改)</li>
 <li>NewAnteHandler：在交易执行前扣除手续费&amp;检查合法性x/auth/ante.go</li>
 <li>NewHandler: x/auth:</li>
-<li>addRoute-&gt;AnteHandler-&gt;Handler-&gt;Mapper-&gt;Account(键值修改)</li>
 </ul></li>
 </ul>
 </section>
@@ -186,12 +193,11 @@
 <li>app/app.go</li>
 <li>capKeyMainStore*sdk.KVStoreKey</li>
 <li>capKeyIBCStore*sdk.KVStoreKey</li>
-<li>baseapp/baseapp.go: ABCI(CheckTx,DeliverTx…ValidateTx)</li>
 </ul></li>
 </ul>
 </section>
-<section id="已有库" class="slide level3">
-<h3>已有库</h3>
+<section id="已有库区块链的基本功能" class="slide level3">
+<h3>已有库：区块链的基本功能</h3>
 <ul>
 <li>bank</li>
 <li>auth:sdk.Account:定义了基本接口函数Get,Set,GetAddress,Getcoin,SetCoin</li>
@@ -199,10 +205,10 @@
 </section>
 <section id="go-wire" class="slide level3">
 <h3>Go-wire</h3>
-<p>全新的编码方式</p>
-<p>sdk.Account:定义了基本接口函数 Get,Set,GetAddress,Getcoin,SetCoin auth.BaseAccount auth.AccountMapper</p>
-<p>an object capability system allows private agents to enter in contractual arrangements,mediated by a trusted third party. on the oter hand, blockchain allows the creation of synthetic third party becaused they are verified and need to be trusted. by combining the two, one can get a set of private agents to engage in a contract while only the parties can engage in the replication of states. while there is a dispute aroud the outcome of a contract, both parties preserve a shared registry, a shared record of histiry for state change purposed. blockchain has a flat control model(ACL like), which is centric on the account. how can we delegate authority of an account? is limited to multisig &amp;private key. OC has large affluence in the way we can control or distribute authority. we may grand the capability between times, under what condition. protocols amoung autonomous nodes+ verifiable distributed data structure</p>
-<p>linear blockchain&amp; OC allows you to issue permission on a P2P basis. secure applications: secure data 数字签名：secure money how to secure application? pass the value, not address</p>
+<ul>
+<li>全新的编码方式</li>
+<li>优于 JSON</li>
+</ul>
 </section>
 <!-- {{{{ dzslides core
 #
