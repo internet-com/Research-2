@@ -1,8 +1,8 @@
-区块抵押奖励：
+* 区块抵押奖励：
 
-* 发放频率： 每小时
+	* 发放频率： 每小时
 
-* 获益人：除了在
+	* 获益人：除了在unbonded队列中的，都会收到provision
 
 全局的fee pool：
 
@@ -16,5 +16,5 @@
 
     * 分配的奖励 = feesCollected - proposerReward - reserveTaxed
 
-SumFeesReceived会在validator和delegator之间分配
+	SumFeesReceived会在validator和delegator之间分配
 
