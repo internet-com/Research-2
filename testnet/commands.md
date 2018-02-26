@@ -1,0 +1,1 @@
+gaia client init --chain-id=gaia-3-dev --node=tcp://http://82.196.11.230:46657 
