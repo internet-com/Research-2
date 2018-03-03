@@ -3,5 +3,7 @@ copy file gaia/genesis-inclusion-requests/request.toml.template to gaia/genesis-
 21:17
 fill it out, commit, push, send pull request 
 don't need to separate sentry + validator when using the AWS, but assuming you just want to run one node in AWS, make sure that "sentry.host" is the public IP of this node
-21:23
 this will end up in "seeds =" of the config.toml
+you need a python3 with fire and toml installed (e.g. pip install -f scripts/chainsetup/requirements.txt), and then you run python3 scripts/chainsetup/generate-config.py inofficial-101 and python3 scripts/chainsetup/generate-genesis.py inofficial-101
+
+py3.6 actually
