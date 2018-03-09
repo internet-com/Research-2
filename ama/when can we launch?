@@ -1,0 +1,25 @@
+when can we launch?
+the economics, how to charge fees?
+the HSM
+no commit for now
+around May
+What does "launch" look like in this context?  Cosmos Hub + ?  Is there a document detailing what is expected to be working at launch?
+逐步添加功能
+launch的时候不会有IBC：different channel
+HSM：sign 的功能在下一个tm release中可以支持
+1. what happens if nodes in the genesis config need to change their IP address?
+下线再重新上线
+2. Syncing up new nodes: Is it possible to expedite the initial sync of a new node by sharing the data directory of a current node?
+unbound 开始
+3. What is the storage expectations for the data directory?
+100GB级别
+4. Time sensitivity: How important is to have sentries/validators synced up by wall time?
+BFT time
+40tx/s
+HHD=>SSD
+
+genesis file里面的人需要先发送bond tx
+
+
+validator have share of the pool=>change/unbond=> retrive shares
+Ledger HSMs
