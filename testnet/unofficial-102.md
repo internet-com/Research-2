@@ -5,6 +5,7 @@ gaia client init --chain-id unofficial-102 --node=tcp://169.229.198.105:46657 --
 
 gaia client tx declare-candidacy --name suyuuu --amount 900fermion --pubkey A59140B268A36BA13A91E12CE8D8D356439517FA1DA3B6DE7207010FAB5A61C4 --moniker bianjie --details "bianjie.ai"
 
+gaia client rpc status
 
 gaia client keys recover suyuuuu
 
