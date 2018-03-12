@@ -7,3 +7,10 @@ this will end up in "seeds =" of the config.toml
 you need a python3 with fire and toml installed (e.g. pip install -f scripts/chainsetup/requirements.txt), and then you run python3 scripts/chainsetup/generate-config.py inofficial-101 and python3 scripts/chainsetup/generate-genesis.py inofficial-101
 
 py3.6 actually
+
+
+pip3 install -r  requirements.txt
+
+python3 scripts/chainsetup/generate-config.py inofficial-101
+
+python3 scripts/chainsetup/generate-genesis.py inofficial-101
