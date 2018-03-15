@@ -22,3 +22,5 @@ gaia client tx send --name suyuuu --to A1457DF58614286DC70EBCBA50FD50B37262E4B5 
 gaia client query candidate --pubkey A59140B268A36BA13A91E12CE8D8D356439517FA1DA3B6DE7207010FAB5A61C4
 
 gaia client tx unbond --pubkey A59140B268A36BA13A91E12CE8D8D356439517FA1DA3B6DE7207010FAB5A61C4 --shares 900 --name suyuuu
+
+gaia client rpc block --height 46439
