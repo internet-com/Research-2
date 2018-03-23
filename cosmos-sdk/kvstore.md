@@ -1,6 +1,10 @@
-1.将tx.go和main.go合并为一个文件
+1. 将tx.go和main.go合并为一个文件
+
 2. go run main.go
-3.测试
+
+3. 测试
+
+```
 http://localhost:46657/broadcast_tx_commit?tx="hello"
 {
   "jsonrpc": "2.0",
@@ -17,3 +21,13 @@ http://localhost:46657/broadcast_tx_commit?tx="hello"
     "height": 73
   }
 }
+```
+
+```
+
+ ./basecoind init
+I[03-06|09:30:20.031] Found private validator                      module=main path=/Users/b/.basecoind/config/priv_validator.json
+I[03-06|09:30:20.031] Found genesis file                           module=main path=/Users/b/.basecoind/config/genesis.json
+Secret phrase to access coins:
+canvas blood spot goose victory crush question zone vintage whisper gentle prison defy frost artefact abandon
+```

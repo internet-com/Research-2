@@ -1,9 +1,10 @@
-git clone https://github.com/brandoncurtis/testnets.git $HOME/testnets
-GAIANET=$HOME/testnets/unofficial-102/gaia
-gaia node start --home=$GAIANET >gaia.log
-gaia client init --chain-id unofficial-102 --node=tcp://169.229.198.105:46657 --home /mnt/gaia_client
+git clone https://github.com/brandoncurtis/testnets.git /mnt/gaia_node/testnets
+GAIANET=/mnt/gaia_node/testnets/unofficial-102/gaia
+cd $GAIANET
+gaia node start --home=$GAIANET >gaia.log&
+gaia client init --chain-id unofficial-102 --node=tcp://localhost:46657 --home /mnt/gaia_client
 
-gaia client tx declare-candidacy --name suyuuu --amount 900fermion --pubkey A59140B268A36BA13A91E12CE8D8D356439517FA1DA3B6DE7207010FAB5A61C4 --moniker bianjie --details "bianjie.ai"
+gaia client tx declare-candidacy --name suyuuu --amount 900fermion --pubkey A59140B268A36BA13A91E12CE8D8D356439517FA1DA3B6DE7207010FAB5A61C4 --moniker bianjie --details "bianjie.ai" 
 
 gaia client rpc status
 
@@ -12,6 +13,7 @@ gaia client keys recover suyuuuu
 gaia client query account 7D626173FAA69D96E56523A333EAF78F87843CE5
 
 dash judge window useless great script twenty estate parrot raccoon word meadow approve odor chef absent
+
 
 
 /home/zhiqiang/.cosmos-gaia-cli/keys/bianjie.pub
@@ -24,3 +26,8 @@ gaia client query candidate --pubkey A59140B268A36BA13A91E12CE8D8D356439517FA1DA
 gaia client tx unbond --pubkey A59140B268A36BA13A91E12CE8D8D356439517FA1DA3B6DE7207010FAB5A61C4 --shares 900 --name suyuuu
 
 gaia client rpc block --height 46439
+
+
+gaia client tx declare-candidacy --name suyuuu --amount 900fermion --pubkey A59140B268A36BA13A91E12CE8D8D356439517FA1DA3B6DE7207010FAB5A61C4 --moniker bianjie --details "bianjie.ai"
+Please enter passphrase for suyuuu:
+ERROR: broadcast_tx_commit: Response error: RPC error -32603 - Internal error: Error on broadcastTxCommit: failed to subscribe to tx: already subscribed
