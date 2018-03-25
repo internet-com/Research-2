@@ -1,0 +1,44 @@
+MYNAME=abc
+iris client keys new $MYNAME
+iris client keys list
+abc		570C02CF36D2503D8BDCAF16DA8443593FA1117D
+MYADDR=570C02CF36D2503D8BDCAF16DA8443593FA1117D
+will person moment source vivid barrel kit train cereal cigar place rapid direct chef base abstract
+
+iris node  init $MYADDR --home=$HOME/.iris1 --chain-id=test
+iris node  init $MYADDR --home=$HOME/.iris2 --chain-id=test
+cp $HOME/.iris1/config/genesis.json $HOME/.iris2/config/genesis.json
+vi $HOME/.iris2/config/config.toml
+
+iris node start --home=$HOME/.iris1  &> iris1.log &
+NODE1_PID=$!
+iris node start --home=$HOME/.iris2  &> iris2.log &
+NODE2_PID=$!
+
+
+iris client init --chain-id=test --node=tcp://localhost:46657
+gaia client query account $MYADDR
+gaia client query candidates
+
+
+NEWVAL=newval
+iris client keys new $NEWVAL
+newval		4E8EB754ECEEB12995247EA1C32BF06F35B43F21
+MYADDR2=4E8EB754ECEEB12995247EA1C32BF06F35B43F21
+iris client tx send --amount=1000fermion --to=$MYADDR2 --name=$MYNAME
+
+
+PUBKEY=$(cat ~/.iris1/config/priv_validator.json | jq -r .pub_key.data)
+iris client tx declare-candidacy --amount=500fermion --name=$MYNAME --pubkey=$PUBKEY --moniker test --details "test" 
+iris client query candidate --pubkey $PUBKEY
+
+
+PUBKEY2=$(cat ~/.iris2/config/priv_validator.json | jq -r .pub_key.data)
+iris client tx declare-candidacy --amount=500fermion --name=$NEWVAL --pubkey=$PUBKEY2 --moniker test2 --details "test2" 
+
+iris client tx edit-candidacy --name=$MYNAME --pubkey=$PUBKEY --moniker testtest
+
+
+ gaia client rpc block --height 1000
+
+ gaia client tx unbond --pubkey $PUBKEY --shares 10 --name $MYNAME
