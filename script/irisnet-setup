@@ -7,6 +7,7 @@ will person moment source vivid barrel kit train cereal cigar place rapid direct
 
 iris node  init $MYADDR --home=$HOME/.iris1 --chain-id=test
 iris node  init $MYADDR --home=$HOME/.iris2 --chain-id=test
+tendermint show_node_id --home=$HOME/.iris1
 cp $HOME/.iris1/config/genesis.json $HOME/.iris2/config/genesis.json
 vi $HOME/.iris2/config/config.toml
 
