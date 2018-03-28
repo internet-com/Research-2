@@ -1,0 +1,37 @@
+https://github.com/sozorogami/gover
+https://github.com/mattn/goveralls
+
+
+
+
+
+goveralls -repotoken nNeZ1KSx3OllVAGAqlVGyXh4vEqkVFHkH
+exit status 1: warning: no packages being tested depend on github.com/kidinamoto01/go-ipfs-api/tests
+	shell_test.go:24: expected nil: &url.Error{Op:"Post", URL:"http://localhost:5001/api/v0/add?encoding=json&progress=false&stream-channels=true", Err:(*net.OpError)(0xc4200805a0)}
+--- FAIL: TestAdd (0.01s)
+	shell_test.go:35: expected nil: &url.Error{Op:"Post", URL:"http://localhost:5001/api/v0/swarm/peers?encoding=json&stream-channels=true", Err:(*net.OpError)(0xc420080730)}
+--- FAIL: TestFindPeer (0.00s)
+FAIL
+coverage: 6.9% of statements in github.com/kidinamoto01/go-ipfs-api, github.com/kidinamoto01/go-ipfs-api/tests
+FAIL	github.com/kidinamoto01/go-ipfs-api	0.033s
+  1 language: go
+
+
+
+goveralls -coverprofile=gover.coverprofile -service drone.io -repotoken nNeZ1KSx3OllVAGAqlVGyXh4vEqkVFHkH
+Error parsing coverage: open gover.coverprofile: no such file or directory
+bdeMacBook-Air:go-ipfs-api b$ go test -covermode=count -coverprofile=profile.cov
+	shell_test.go:24: expected nil: &url.Error{Op:"Post", URL:"http://localhost:5001/api/v0/add?encoding=json&progress=false&stream-channels=true", Err:(*net.OpError)(0xc4200805a0)}
+--- FAIL: TestAdd (0.01s)
+	shell_test.go:35: expected nil: &url.Error{Op:"Post", URL:"http://localhost:5001/api/v0/swarm/peers?encoding=json&stream-channels=true", Err:(*net.OpError)(0xc420080730)}
+--- FAIL: TestFindPeer (0.00s)
+FAIL
+coverage: 7.6% of statements
+exit status 1
+FAIL	github.com/kidinamoto01/go-ipfs-api	0.051s
+
+go test -v -covermode=count -coverprofile=coverage.out
+COVERALLS_TOKEN=nNeZ1KSx3OllVAGAqlVGyXh4vEqkVFHkH
+goveralls -coverprofile=coverage.out -service=travis-ci -repotoken $COVERALLS_TOKEN
+Job ##1.1
+https://coveralls.io/jobs/34991519
