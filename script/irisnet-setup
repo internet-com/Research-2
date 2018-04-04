@@ -1,19 +1,25 @@
+rm -rf ~/.iris1
+rm -rf ~/.iris2
+rm -rf ~/.iris-cli
+
 MYNAME=abc
-iris client keys new $MYNAME
+password=1234567890
+echo $password|echo $password|iris client keys new $MYNAME
 iris client keys list
-abc		570C02CF36D2503D8BDCAF16DA8443593FA1117D
-MYADDR=570C02CF36D2503D8BDCAF16DA8443593FA1117D
-will person moment source vivid barrel kit train cereal cigar place rapid direct chef base abstract
+abc		898E6D0597ECBB70068B374761797B9B7DB3B4F5
+MYADDR=898E6D0597ECBB70068B374761797B9B7DB3B4F5
+dragon shadow net useless order ripple saddle chair over reopen upper rescue recipe special slab ability
 
 iris node  init $MYADDR --home=$HOME/.iris1 --chain-id=test
 iris node  init $MYADDR --home=$HOME/.iris2 --chain-id=test
 tendermint show_node_id --home=$HOME/.iris1
+13633d8f73734c121ebb5c099658bf68724c0a4f
 cp $HOME/.iris1/config/genesis.json $HOME/.iris2/config/genesis.json
 vi $HOME/.iris2/config/config.toml
 
-iris node start --home=$HOME/.iris1  &> iris1.log &
+iris node start --home=$HOME/.iris1  > $HOME/.iris1/iris1.log &
 NODE1_PID=$!
-iris node start --home=$HOME/.iris2  &> iris2.log &
+iris node start --home=$HOME/.iris2  > $HOME/.iris2/iris2.log &
 NODE2_PID=$!
 
 
@@ -23,19 +29,19 @@ gaia client query candidates
 
 
 NEWVAL=newval
-iris client keys new $NEWVAL
-newval		4E8EB754ECEEB12995247EA1C32BF06F35B43F21
-MYADDR2=4E8EB754ECEEB12995247EA1C32BF06F35B43F21
-iris client tx send --amount=1000fermion --to=$MYADDR2 --name=$MYNAME
+echo $password|echo $password|iris client keys new $NEWVAL
+newval		368CF562626F51BA326BEEA09557AFA36A0D5457
+MYADDR2=368CF562626F51BA326BEEA09557AFA36A0D5457
+echo $password | iris client tx send --amount=1000fermion --to=$MYADDR2 --name=$MYNAME
 
 
 PUBKEY=$(cat ~/.iris1/config/priv_validator.json | jq -r .pub_key.data)
-iris client tx declare-candidacy --amount=500fermion --name=$MYNAME --pubkey=$PUBKEY --moniker test --details "test" 
+echo $password |iris client tx declare-candidacy --amount=500fermion --name=$MYNAME --pubkey=$PUBKEY --moniker test --details "test" 
 iris client query candidate --pubkey $PUBKEY
 
 
 PUBKEY2=$(cat ~/.iris2/config/priv_validator.json | jq -r .pub_key.data)
-iris client tx declare-candidacy --amount=500fermion --name=$NEWVAL --pubkey=$PUBKEY2 --moniker test2 --details "test2" 
+echo $password | iris client tx declare-candidacy --amount=500fermion --name=$NEWVAL --pubkey=$PUBKEY2 --moniker test2 --details "test2" 
 
 iris client tx edit-candidacy --name=$MYNAME --pubkey=$PUBKEY --moniker testtest
 

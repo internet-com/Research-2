@@ -1,0 +1,46 @@
+curl -s `http://116.62.62.39:11657/tx_search?query="from="&prove=true`
+curl "localhost:46657/tx?hash=?"823E4B4F1380DE1952F7F5BA446841AFA983E9C8
+curl -s 'http://localhost:46657/tx?hash=0x466B918E98628ADC0624F5F1B6DD06CDC62F3723' | jq .
+
+
+curl -s 'http://localhost:46657/tx?hash=0x466B918E98628ADC0624F5F1B6DD06CDC62F3723' | jq .
+{
+  "jsonrpc": "2.0",
+  "id": "",
+  "result": {
+    "height": 54,
+    "index": 0,
+    "tx_result": {
+      "data": "",
+      "tags": [
+        {
+          "key": "aGVpZ2h0",
+          "value": "NTQ="
+        },
+        {
+          "key": "Y29pbi5zZW5kZXI=",
+          "value": "VwwCzzbSUD2L3K8W2oRDWT+hEX0="
+        },
+        {
+          "key": "Y29pbi5yZWNlaXZlcg==",
+          "value": "To63VOzusSmVJH6hwyvwbzW0PyE="
+        }
+      ]
+    },
+    "tx": "FgMBBHRlc3QAAAAAAAAAAGkAAAABAQEAAQRzaWdzARRXDALPNtJQPYvcrxbahENZP6ERfSABAQABBHNpZ3MBFFcMAs820lA9i9yvFtqEQ1k/oRF9AQEBB2Zlcm1pb24AAAAAAAAD6AEBAAEEc2lncwEUTo63VOzusSmVJH6hwyvwbzW0PyEBAQEHZmVybWlvbgAAAAAAAAPoAaLtWZcxEMHOeqATquqxhqJUGTENqZpveuSpKArkAd4F63zdAYARGQp6Ayq9IRN0x98u9hkhnze6mOAjr8XUPggBEO4XQH3FqejJO+fwXdCCujLfaMFkRcZ2CUwCQZlxw0Q=",
+    "proof": {
+      "Index": 0,
+      "Total": 0,
+      "RootHash": "",
+      "Data": null,
+      "Proof": {
+        "aunts": null
+      }
+    }
+  }
+}
+
+
+curl -s `http://localhost:46657/tx_search?query=\"from='570C02CF36D2503D8BDCAF16DA8443593FA1117D'\"&prove=true`
+curl -s `http://localhost:46657/tx_search?query=\"from='570C02CF36D2503D8BDCAF16DA8443593FA1117D'\"&prove=true`
+

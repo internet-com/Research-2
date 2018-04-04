@@ -1,0 +1,31 @@
+MYNAME=bianjie
+MYADDR=01EF189E2FC81A02165B2842699FADA1127C593C
+./democoind init
+创世账户：
+bianjie		01EF189E2FC81A02165B2842699FADA1127C593C
+./democli init --chain-id=test-chain-t2Oggg --node=tcp://localhost:46657
+
+MYNAME=bianjie
+MYADDR=01EF189E2FC81A02165B2842699FADA1127C593C
+MYADDR1=7EA0DCCDBB0F71595B49DF43072538FA4BB9894C
+./democli send --amount=1000democoin --to=$MYADDR1 --name=$MYNAME
+./democli transfer --amount=1000mycoin --to=$MYADDR1 --name=$MYNAME
+
+
+
+abc		7EA0DCCDBB0F71595B49DF43072538FA4BB9894C
+**Important** write this seed phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+
+adult thank scrap sand culture garbage outer pretty erase elite arrive belt keep helmet assist abandon
+
+
+I[04-04|09:42:01.823] Rejected bad transaction                     module=mempool tx="\u0001\u0001\u0001\u0001\u0014\u0001\ufffd\u0018\ufffd/\ufffd\u001a\u0002\u0016[(Bi\ufffd\ufffd\ufffd\u0012|Y<\u0001\u0001\u0001\u0006mycoin\u0000\u0000\u0000\u0000\u0000\u0000\u0003\ufffd\u0001\u0001\u0001\u0014~\ufffd\ufffdͻ\u000fqY[I\ufffdC\u0007%8\ufffdK\ufffd\ufffdL\u0001\u0001\u0001\u0006mycoin\u0000\u0000\u0000\u0000\u0000\u0000\u0003\ufffd\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0001\u0001\u0011\ufffd\ufffd\ufffd\ufffd,:\"K\ufffd\ufffd\ufffd&=\ufffd\ufffdƗD 7\ufffd\ufffd>\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u0001\ufffdY\u001cܲ+R\ufffd\u001e\ufffd\ufffdΡt\ufffd\ufffd\ufffd\ufffd'M\ufffd\ufffdF'\ufffd\ufffds\ufffdW\ufffdl([\ufffdf\ufffd\ufffd\ufffdu\ufffdÔ\ufffd\ufffd\ufffdvwG\ufffdQ\ufffd\u0010\ufffd\ufffd\ufffd\u0004\u0014\ufffd\u0001\ufffd\ufffd \ufffd\r\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000" res="&{CheckTx:code:9 log:\"msg: 01EF189E2FC81A02165B2842699FADA1127C593C\\ntrace:\\n\" fee:<> }"
+
+./democli account 01EF189E2FC81A02165B2842699FADA1127C593C
+getAccountCmd
+ERROR: Error{2:accBytes are empty,<nil>,0}
+
+
+
+
