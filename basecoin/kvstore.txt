@@ -1,1 +1,21 @@
- go build ./examples/kvstore/
+ go build ./examples/
+ title Generation of AppHash
+
+tendermint-core->BlockchainReactor:Start-poolRoutine()
+BlockchainReactor->BlockExecutor: invoke
+BlockExecutor->AppConnConsensus:ApplyBlock()
+AppConnConsensus --> Baseapp/rootMultiStore:DeliverTx()
+BlockExecutor->AppConnConsensus: Commit()
+
+AppConnConsensus --> Baseapp/rootMultiStore:Commit()
+Baseapp/rootMultiStore->Baseapp/rootMultiStore:commitStores() 
+Baseapp/rootMultiStore-->AppConnConsensus: {CommitID,AppHash:[]byte}
+AppConnConsensus->BlockExecutor: AppHash:[]byte
+
+
+Baseapp->Router:message
+Router->Handler:message_decode
+Handler->Mapper:change kv store
+Mapper->Baseapp/rootMultiStore:modify kvstore
+
+

@@ -1,0 +1,12 @@
+go get https://github.com/cosmos/cosmos-sdk
+cd ~/go/src/github.com/cosmos/cosmos-sdk/
+git checkout master
+make get_tools
+make get_vendor_deps
+make build
+./build/basecoind init
+cat ~/.basecoind/config/priv_validator.json | jq
+
+
+./build/basecli keys add default
+./build/basecli list

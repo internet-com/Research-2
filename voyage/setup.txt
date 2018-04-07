@@ -1,0 +1,14 @@
+rm -rf ~/.gaia1
+MYNAME=bianjie
+PASSWORD=1234567890
+SEED=`echo $PASSWORD|echo $PASSWORD|gaia client keys new $MYNAME | tail -1`
+
+MYADDR=`gaia client keys get $MYNAME | cut -f3`
+gaia node init $MYADDR --home=$HOME/.gaia1 --chain-id=local
+gaia node start --home=$HOME/.gaia1  > $HOME/.gaia1/gaia1.log &
+NODE1_PID=$!
+gaia client init --chain-id=gaia-2 --node=tcp://localhost:46657
+
+
+yarn run testnet local
+
