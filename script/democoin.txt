@@ -26,6 +26,198 @@ I[04-04|09:42:01.823] Rejected bad transaction                     module=mempoo
 getAccountCmd
 ERROR: Error{2:accBytes are empty,<nil>,0}
 
+./democoind init
 
+MYNAME=abc
+password=1234567890
+./democli  keys add $MYNAME
+palace casino pact able hawk february kingdom explain quit vacant host friend baby school assault abandon
+MYADDR=D113839FE15D7284B0D5BA1DA899943300C0EBA9
+./democoind init $MYADDR --home=$HOME/.democoind  --chain-id=test
+
+./democoind init $MYADDR --home=$HOME/.democoind
+I[04-09|06:03:40.881] Generated private validator                  module=main path=/Users/b/.democoind/config/priv_validator.json
+I[04-09|06:03:40.884] Generated genesis file                       module=main path=/Users/b/.democoind/config/genesis.json
+{
+  "secret": "faint work disorder sniff robust census afford cost sound average swear patch inject iron asthma abandon",
+  "chain_id": "test-chain-YCeKC1",
+  "account": "6EFF9FA0D99285DEDC12E0BA450B8C276FFFDBA5",
+  "validator": {
+    "pub_key": {
+      "type": "ed25519",
+      "data": "319420C432A765648F3DBDAE9A3C0AE75699A33BAEFF8005C8401A6AC8579823"
+    },
+    "power": 10,
+    "name": ""
+  },
+  "node_id": "d0aff8cec974612a45c278473d9d8b6903fe3d96"
+}
+
+./democoind  start --home=$HOME/.democoind  > demo.log &
+./democli init --chain-id=test-chain-YCeKC1 --node=tcp://localhost:46657
+ echo 1234567890| ./democli setcool abc --name=demo --node=tcp://localhost:46657 --chain-id=test-chain-YCeKC1 --sequence=0
+ Committed at block 764. Hash: F8D87C8D4AA5849E0E95764F95C94DAD26729B2D
+ echo 1234567890| ./democli cool abc --name=demo --node=tcp://localhost:46657 --chain-id=test-chain-YCeKC1 --sequence=1
+ ./democli tx F8D87C8D4AA5849E0E95764F95C94DAD26729B2D
+{
+  "height": 764,
+  "tx": {
+    "msg": {
+      "Sender": "6EFF9FA0D99285DEDC12E0BA450B8C276FFFDBA5",
+      "CoolAnswer": "abc"
+    },
+    "fee": {
+      "Amount": [],
+      "Gas": 0
+    },
+    "signatures": [
+      {
+        "pub_key": {
+          "type": "ed25519",
+          "data": "0467CC5AC0AEF4EBF1443606D4D7468A3921C66D495259CAB3F63EF0D2CD4CE2"
+        },
+        "signature": {
+          "type": "ed25519",
+          "data": "9C1E91AB465507298F271655883B5FAB3BF100EE34CAFBF8D8952498BDEDF0161BE27C69AD9BBAA6483187D631E193E65DCDC46F59897310F9EB3EC944425E01"
+        },
+        "sequence": 1
+      }
+    ]
+  },
+  "result": {
+    "fee": {}
+  }
+}
+
+ echo 1234567890| ./democli setcool abcdef --name=demo --node=tcp://localhost:46657 --chain-id=test-chain-YCeKC1 --sequence=2
+ echo 1234567890| ./democli cool abcdef --name=demo --node=tcp://localhost:46657 --chain-id=test-chain-YCeKC1 --sequence=3
+
+ ./democli account 6EFF9FA0D99285DEDC12E0BA450B8C276FFFDBA5
+{
+  "address": "6EFF9FA0D99285DEDC12E0BA450B8C276FFFDBA5",
+  "coins": [
+    {
+      "denom": "abc",
+      "amount": 69
+    },
+    {
+      "denom": "abcdef",
+      "amount": 69
+    },
+    {
+      "denom": "mycoin",
+      "amount": 9007199254740992
+    }
+  ],
+  "public_key": {
+    "type": "ed25519",
+    "data": "0467CC5AC0AEF4EBF1443606D4D7468A3921C66D495259CAB3F63EF0D2CD4CE2"
+  },
+  "sequence": 4,
+  "name": ""
+}
+
+ MYNAME2=abc
+password=1234567890
+echo $password | echo $password | ./democli  keys add $MYNAME2
+
+echo $password | echo $password | ./democli  keys add $MYNAME2
+abc		D2BF633E27848DB96CA632B0A5B55F9FE100F5B6
+**Important** write this seed phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+
+steel average wool shiver soul ceiling little dawn leopard reunion happy fortune keep engine art abandon
+
+MYADDR2=D2BF633E27848DB96CA632B0A5B55F9FE100F5B6
+
+
+echo 1234567890| ./democli send --amount=1000mycoin --to=D2BF633E27848DB96CA632B0A5B55F9FE100F5B6 --name=demo --chain-id=test-chain-YCeKC1 --node=tcp://localhost:46657 --sequence=4
+
+echo 1234567890| ./democli send --amount=1000mycoin --to=$MYADDR2 --name=demo --chain-id=test-chain-YCeKC1 --node=tcp://localhost:46657 --sequence=5
+
+ ./democli account  D2BF633E27848DB96CA632B0A5B55F9FE100F5B6
+  ./democli account  D2BF633E27848DB96CA632B0A5B55F9FE100F5B6
+{
+  "address": "D2BF633E27848DB96CA632B0A5B55F9FE100F5B6",
+  "coins": [
+    {
+      "denom": "mycoin",
+      "amount": 1000
+    }
+  ],
+  "public_key": null,
+  "sequence": 0,
+  "name": ""
+}
+
+测试validator
+./democli validatorset
+{
+  "block_height": 2331,
+  "validators": [
+    {
+      "address": "5D9C04412AE20040A0A1618B2A8724DAD9BB8700",
+      "pub_key": {
+        "type": "ed25519",
+        "data": "319420C432A765648F3DBDAE9A3C0AE75699A33BAEFF8005C8401A6AC8579823"
+      },
+      "voting_power": 10,
+      "accum": 0
+    }
+  ]
+}
+
+
+
+echo 1234567890| ./democli bond  --name=abc --chain-id=test-chain-YCeKC1 --node=tcp://localhost:46657 --sequence=0 --stake=1000mycoin --validator=D2BF633E27848DB96CA632B0A5B55F9FE100F5B6
+
+
+
+ echo 1234567890| ./democli bond --amount=1000mycoin  --name=abc --chain-id=test-chain-YCeKC1 --node=tcp://localhost:46657 --sequence=0 --stake=1000 --validator=D2BF633E27848DB96CA632B0A5B55F9FE100F5B6
+ERROR: unknown flag: --amount
+bdeMacBook-Air:build b$ echo 1234567890| ./democli bond  --name=abc --chain-id=test-chain-YCeKC1 --node=tcp://localhost:46667 --sequence=0 --stake=1000 --validator=D2BF633E27848DB96CA632B0A5B55F9FE100F5B6
+ERROR: Invalid coin expression: 1000
+bdeMacBook-Air:build b$ echo 1234567890| ./democli bond  --name=abc --chain-id=test-chain-YCeKC1 --node=tcp://localhost:46657 --sequence=0 --stake=1000mycoin --validator=D2BF633E27848DB96CA632B0A5B55F9FE100F5B6
+ERROR: CheckTx failed: (303) msg: Unknown code 303
+trace:
+
+
+初始化第二个home
+./democoind init $MYADDR --home=$HOME/.democoind2
+./democoind  start --home=$HOME/.democoind2  > $HOME/.democoind2/demo.log &
+validator的地址为 36965AA37430C38EF9C51FBEDB48CFDF7B866D48
+echo 1234567890| ./democli bond  --name=abc --chain-id=test-chain-YCeKC1 --node=tcp://localhost:46657 --sequence=0 --stake=1000mycoin --validator=36965AA37430C38EF9C51FBEDB48CFDF7B866D48
+echo 1234567890| ./democli bond  --name=demo --chain-id=test-chain-YCeKC1 --node=tcp://localhost:46657 --sequence=6 --stake=1000mycoin --validator=319420C432A765648F3DBDAE9A3C0AE75699A33BAEFF8005C8401A6AC8579823
+
+echo 1234567890| ./democli bond  --name=abc --chain-id=test-chain-YCeKC1 --node=tcp://localhost:46667 --sequence=0 --stake=100mycoin --validator=8B7191678519E3601BBB1C49F96AEF4D3A3087701A8E4B39EF533778B90878E9 --fee=1mycoin
+
+
+ERROR: CheckTx failed: (303) msg: Unknown code 303
+trace:
+
+github.com/cosmos/cosmos-sdk/client/core.CoreContext.BroadcastTx
+	/Users/b/Documents/go/src/github.com/cosmos/cosmos-sdk/client/core/core.go:32
+github.com/cosmos/cosmos-sdk/client/core.CoreContext.SignBuildBroadcast
+	/Users/b/Documents/go/src/github.com/cosmos/cosmos-sdk/client/core/core.go:137
+github.com/cosmos/cosmos-sdk/x/simplestake/commands.commander.sendMsg
+	/Users/b/Documents/go/src/github.com/cosmos/cosmos-sdk/x/simplestake/commands/commands.go:98
+github.com/cosmos/cosmos-sdk/x/simplestake/commands.commander.bondTxCmd
+	/Users/b/Documents/go/src/github.com/cosmos/cosmos-sdk/x/simplestake/commands/commands.go:82
+github.com/cosmos/cosmos-sdk/x/simplestake/commands.(commander).(github.com/cosmos/cosmos-sdk/x/simplestake/commands.bondTxCmd)-fm
+	/Users/b/Documents/go/src/github.com/cosmos/cosmos-sdk/x/simplestake/commands/commands.go:28
+github.com/cosmos/cosmos-sdk/vendor/github.com/spf13/cobra.(*Command).execute
+	/Users/b/Documents/go/src/github.com/cosmos/cosmos-sdk/vendor/github.com/spf13/cobra/command.go:756
+github.com/cosmos/cosmos-sdk/vendor/github.com/spf13/cobra.(*Command).ExecuteC
+	/Users/b/Documents/go/src/github.com/cosmos/cosmos-sdk/vendor/github.com/spf13/cobra/command.go:846
+github.com/cosmos/cosmos-sdk/vendor/github.com/spf13/cobra.(*Command).Execute
+	/Users/b/Documents/go/src/github.com/cosmos/cosmos-sdk/vendor/github.com/spf13/cobra/command.go:794
+github.com/cosmos/cosmos-sdk/vendor/github.com/tendermint/tmlibs/cli.Executor.Execute
+	/Users/b/Documents/go/src/github.com/cosmos/cosmos-sdk/vendor/github.com/tendermint/tmlibs/cli/setup.go:89
+main.main
+	/Users/b/Documents/go/src/github.com/cosmos/cosmos-sdk/examples/democoin/cmd/democli/main.go:95
+runtime.main
+	/usr/local/Cellar/go/1.9.2/libexec/src/runtime/proc.go:195
+runtime.goexit
+	/usr/local/Cellar/go/1.9.2/libexec/src/runtime/asm_amd64.s:2337
 
 
