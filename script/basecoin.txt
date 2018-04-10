@@ -1,0 +1,51 @@
+1. 初始化
+./basecoind init
+I[04-10|06:57:06.784] Generated private validator                  module=main path=/Users/b/.basecoind/config/priv_validator.json
+I[04-10|06:57:06.786] Generated genesis file                       module=main path=/Users/b/.basecoind/config/genesis.json
+{
+  "secret": "almost transfer mango dream giraffe brush large seat stove ridge pottery wine tunnel come apart abandon",
+  "chain_id": "test-chain-umM1rd",
+  "account": "5CE843E3047D302CA27B7A6E17B7F85FB0D02FA6",
+  "validator": {
+    "pub_key": {
+      "type": "AC26791624DE60",
+      "value": "tzm14OrwesP0HtsgREq7BImeoLa6lV+5UoPDHNl9k1w="
+    },
+    "power": 10,
+    "name": ""
+  },
+  "node_id": "a6450ac02050597eac4bba39efe30aae676ec523"
+}
+2.找回密码
+./basecli keys add demo --recover
+demo    54C61D6B0962F1A6558A8ECF1FEC45C68EDFD289
+MYNAME=demo
+MYADDR=54C61D6B0962F1A6558A8ECF1FEC45C68EDFD289
+PASS=1234567890
+
+3.创建另外一个账户
+MYNAME2=abc
+echo $PASS | echo $PASS | ./basecli  keys add $MYNAME2
+MYADDR2=5FBCFC8543E966F668E24111C003ACC747CD28CA
+mkdir -p $HOME/.basecoind2/config
+./basecoind show_node_id --home=$HOME/.basecoind
+cp $HOME/.basecoind/config/genesis.json $HOME/.basecoind2/config
+cp $HOME/.basecoind/config/config.toml $HOME/.basecoind2/config
+vi $HOME/.basecoind2/config/config.toml
+修改相关配置
+
+4.启动
+./basecoind  start --home=$HOME/.basecoind  > base1.log &
+./basecoind  start --home=$HOME/.basecoind2  > base2.log &
+
+5.转账
+./basecli account $MYADDR
+
+echo 1234567890| ./basecli send --amount=1000mycoin --to=$MYADDR2 --name=demo --chain-id=test-chain-2a7maw --node=tcp://localhost:46657 --sequence=0
+
+./basecli account $MYADDR2
+
+
+
+6.绑定
+echo 1234567890| ./basecli bond  --name=abc --chain-id=test-chain-2a7maw  --sequence=0 --stake=1000mycoin --validator=870c5438b4a5bd4d4ca400323535cc88d2237a41ad9766f70079fa7581f8d7eb
