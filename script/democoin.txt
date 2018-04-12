@@ -52,7 +52,7 @@ I[04-09|06:03:40.884] Generated genesis file                       module=main p
   },
   "node_id": "d0aff8cec974612a45c278473d9d8b6903fe3d96"
 }
-
+./democli keys add demo --recover
 ./democoind  start --home=$HOME/.democoind  > demo.log &
 ./democli init --chain-id=test-chain-YCeKC1 --node=tcp://localhost:46657
  echo 1234567890| ./democli setcool abc --name=demo --node=tcp://localhost:46657 --chain-id=test-chain-YCeKC1 --sequence=0
@@ -189,8 +189,11 @@ validator的地址为 36965AA37430C38EF9C51FBEDB48CFDF7B866D48
 echo 1234567890| ./democli bond  --name=abc --chain-id=test-chain-YCeKC1 --node=tcp://localhost:46657 --sequence=0 --stake=1000mycoin --validator=36965AA37430C38EF9C51FBEDB48CFDF7B866D48
 echo 1234567890| ./democli bond  --name=demo --chain-id=test-chain-YCeKC1 --node=tcp://localhost:46657 --sequence=6 --stake=1000mycoin --validator=319420C432A765648F3DBDAE9A3C0AE75699A33BAEFF8005C8401A6AC8579823
 
-echo 1234567890| ./democli bond  --name=abc --chain-id=test-chain-YCeKC1 --node=tcp://localhost:46667 --sequence=0 --stake=100mycoin --validator=8B7191678519E3601BBB1C49F96AEF4D3A3087701A8E4B39EF533778B90878E9 --fee=1mycoin
-
+echo 1234567890| ./democli bond  --stake=100mycoin --validator=8B7191678519E3601BBB1C49F96AEF4D3A3087701A8E4B39EF533778B90878E9 --name=abc --chain-id=test-chain-YCeKC1  --sequence=0 
+ddb99044db503ab0052fb52d4f2217f94ff6af987175ffcab8c1ea23cbef9992
+f01ef5f75ebbf39d7d137eb4d41041d42e3d17de80105e03dc0df4f3bef4d40f04e01dfd105e77dfbefc07dd3cefc13d
+PUBKEY=$(cat ~/.demoind/config/priv_validator.json | jq -r .pub_key.data)
+echo 1234567890| ./democli bond  --stake=100mycoin --validator=36965AA37430C38EF9C51FBEDB48CFDF7B866D48 --name=abc --chain-id=test-chain-YCeKC1  --sequence=0
 
 ERROR: CheckTx failed: (303) msg: Unknown code 303
 trace:
