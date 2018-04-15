@@ -8,4 +8,7 @@ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags "-X github.com/cosmos/co
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags "-X github.com/cosmos/cosmos-sdk/version.GitCommit=`git rev-parse --short HEAD`" -o build/linux/gaiacli ./cmd/gaiacli
 
 
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o build/linux/tm-monitor 
+
+
 

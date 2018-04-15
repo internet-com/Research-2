@@ -133,6 +133,7 @@ gaiad show_node_id --home=$HOME/.gaiad1
 ```
 We need to also modify $HOME/.gaiad2/config.toml to set new seeds and ports. It should look like:
 ```
+moniker ="your-name"
 proxy_app = "tcp://127.0.0.1:46668"
 moniker = "anonymous"
 fast_sync = true

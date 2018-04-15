@@ -1,0 +1,8 @@
+In bitcoin, we don't have an encoding&decoding standard. 
+In Ethereum, we have RLP whish is used in the communication 
+Go-amino is inspired by 
+It'
+you can register the interfaces, 
+it has forward upgradability. 
+
+what's the difference between RLP & go-amino?
