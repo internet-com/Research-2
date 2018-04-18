@@ -1,0 +1,19 @@
+##创建本地镜像
+docker build -t gaiad .
+##输出
+Successfully built 3d2b4b3aea72
+Successfully tagged gaiad:latest
+##尝试运行
+docker run -it --rm -v "/tmp:/gaiad" 3d2b4b3aea72 init --home=/gaiad
+
+## 发布镜像
+docker tag gaiad:latest  suyuhuang/gaiad
+docker push suyuhuang/gaiad
+
+## 下载镜像到本地
+docker pull suyuhuang/gaiad:latest
+
+## 运行
+docker run -it --rm -v "/tmp:/gaiad" suyuhuang/gaiad:latest init   --home=/gaiad
+docker run -it --rm -v "/tmp:/gaiad" suyuhuang/gaiad:latest show_node_id   --home=/gaiad
+docker run -it --rm -v "/tmp:/gaiad" suyuhuang/gaiad:latest start   --home=/gaiad
