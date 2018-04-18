@@ -29,4 +29,12 @@ Atoms被设计成用于维护枢纽安全的权益抵押的代币。也就是说
 
 ## Hard spoon
 
-Hard spoon可以被看作是映射现有的加密货币状态的方式。我们希望首先实现以太坊到Cosmos的hard spoon映射，也就是说我们希望实现以复制太坊账户余额 ，然后以Photon的形式在 [Ethermint](https://ethermint.zone/)之上使用。在Cosmos 枢纽上线后，Atom的持有者将会对是否激活Hard Spoon进行投票。通过投票，我们可以确认Hard Spoon发生的After launch, Atom holders will be able to vote on the hard spoon, specifically:Whether the hard spoon should happen or notWhen the snapshot will occurHow Photons are distributed (what goes to Ethereum holders, what goes to Atom holders and Photon inflation)ValidatorsValidators of the Cosmos Hub are responsible for creating new blocks of transactions that are added to the blockchain. Running a validator is non-trivial. It requires technical knowledge and hardware investment. Additionally, due to the way that Tendermint—the underlying consensus engine on which the Cosmos Hub is built—works, the number of validators must be limited. Initially, this limit is fixed to 100. This means that only the top 100 addresses with the most stake that declared their intention to become validator will be validators. As a result, most Atom holders will not be validators. Instead, they will become delegators, thereby participating in deciding who among the validator candidates actually become validators.
+Hard spoon可以被看作是映射现有的加密货币状态的方式。我们希望首先实现以太坊到Cosmos的hard spoon映射，也就是说我们希望实现以复制太坊账户余额 ，然后以Photon的形式在 [Ethermint](https://ethermint.zone/)之上使用。在Cosmos 枢纽上线后，Atom的持有者将会对是否激活Hard Spoon进行投票。通过投票，我们可以确
+
+* Hard Spoon是否应该执行
+* Hard Spoon预计发生的时间
+* Photon在以太币持有人、Atom持有人之间如何分配
+
+## 验证人 Validators
+
+在Cosmos枢纽中，验证人负责将交易打包并提交区块。成为一个验证人需要满足很多条件，不仅仅是技术和硬件上的投资。同时，因为只有在有限验证人的条件下，Tendermint才能发挥最大的作用。目前，我们将Cosmos枢纽的验证人上限定为100。也就是说只有前100个验证人能够获得奖励，而大部分Atom持有者不会成为验证人而是通过委托的方式决定谁会成为验证人。who among the validator candidates actually become validators.
