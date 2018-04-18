@@ -1,5 +1,61 @@
-Validators
+# Validator验证人
 
-What is a Cosmos Validator? How can you run one?
+什么是 Cosmos Validator? 成为验证人需要什么条件?
 
-What is a validator?The [Cosmos Hub](https://cosmos.network/developers) is based on [Tendermint](https://tendermint.com/), which relies on a set of validators that are responsible for committing new blocks in the blockchain. These validators participate in the consensus protocol by broadcasting votes which contain cryptographic signatures signed by each validator's private key.Validator candidates can bond their own Atoms and have Atoms ["delegated"](https://cosmos.network/staking/delegators), or staked, to them by token holders. The Cosmos Hub will have 100 validators, but over time this will increase to 300 validators according to a predefined schedule. The validators are determined by who has the most stake delegated to them — the top 100 validator candidates with the most stake will become Cosmos validators.Validators and their delegators will earn Atoms as block provisions and tokens as transaction fees through execution of the Tendermint consensus protocol. Initially, transaction fees will be paid in Atoms but in the future, any token in the Cosmos ecosystem will be valid as fee tender if it is whitelisted by governance. Note that validators can set commission on the fees their delegators receive as additional incentive.If validators double sign, are frequently offline or do not participate in governance, their staked Atoms (including Atoms of users that delegated to them) can be slashed. The penalty depends on the severity of the violation.All details concerning validators and the validation process can be found in our FAQ. [Read the validator FAQ](https://cosmos.network/staking/validators-faq)Becoming a validatorEach validator candidate is encouraged to run its operations independently, as diverse setups increase the resilience of the network. Validator candidates should commence their setup phase now in order to be on time for launch.Next, you will find baseline recommendations for entities intending to run a validator in the early days of the Cosmos network. Note that these are recommendations. They are not is mandatory for becoming a validator. Ultimately, validator candidates are sorted based on their total stake.Baseline recommendations:1. Read the FAQBe familiar with all the responsibilities of a validator by reading our [FAQ](https://cosmos.network/staking/validators-faq). This FAQ will be frequently updated so be sure to stay up-to-date.2. Participate in the testnetActively participate in the testnet. By the end of 2017 you should be able to maintain a validator node with constant uptime on the testnet. Below you will find instructions on how to become a validator in our testnet.[Text Tutorial](https://github.com/cosmos/gaia/blob/master/README.md)[Video Tutorial](https://www.youtube.com/watch?v=B-shjoqvnnY)Tutorial and faucet maintained by community member [Michael Yuan](http://cosmosvalidators.com/)Be sure to frequently check the [changelog](https://github.com/cosmos/gaia/blob/master/CHANGELOG.md) and the [validator chat](https://riot.im/app/#/room/#cosmos_validators:matrix.org) to keep track of any updates.3. Set up a validator websiteSet up a dedicated validator's website and signal your intention to become a validator on our [forum](https://forum.cosmos.network/t/validator-candidates-websites/127/3). This is important since delegators will want to have information about the entity they are delegating their Atoms to.4. HardwareThere currently exists no appropriate cloud solution for validator key management. This may change in 2018 when cloud SGX becomes more widely available. For this reason, validators must set up a physical operation secured with restricted access. A good starting place, for example, would be co-locating in secure datacenters.Validators should expect to equip their datacenter location with redundant power, connectivity, and storage backups. Expect to have several redundant networking boxes for fiber, firewall and switching and then small servers with redundant hard drive and failover. Hardware can be on the low end of datacenter gear to start out with.We anticipate that network requirements will be low initially. The current testnet requires minimal resources. Then bandwidth, CPU and memory requirements will rise as the network grows. Large hard drives are recommended for storing years of blockchain history.5. Key management - HSMIt is mission critical that an attacker cannot steal a validator's key. If this is possible, it puts the entire stake delegated to the compromised validator at risk. Hardware security modules are an important strategy for mitigating this risk.HSM modules must support ed25519 signatures for the hub. The YubiHSM2 supports ed25519 and we expect to have an adapter library available in december. The YubiHSM can protect a private key but cannot ensure in a secure setting that it won't sign the same block twice.The Tendermint team is also working on extending our Ledger Nano S application to support validator signing. This app can store recent blocks and mitigate double signing attacks.We will update this page when more key storage solutions become available.6. DDOS protection (sentry node)Validators are responsible for ensuring that the network can sustain denial of service attacks.We recommend that validators run full nodes in the cloud and configure their validator nodes only to connect to those full nodes. Those full nodes can be moved or apply cloud based DDOS protection to mitigate DDOS attacksFinally, establishing connections directly with other validators can ensure that your node can't be taken offline via internet based attacks.Validators should track the progress of these two github issues:https://github.com/tendermint/tendermint/issues/866https://github.com/tendermint/tendermint/issues/865Validators should begin testing sentry nodes on the testnet when progress has been made on these issues.7. Organize with your local jurisdictionWe strongly recommend that validators setup a separate company and not be run directly by an individual. Seek legal advice if you believe you may need additional licenses. Validators may want to establish terms of service and limits on liability for delegators or have delegators to operate at their own risk.CommunityDiscuss the finer details of being a validator on our community chat and forum:[Validator Chat](https://riot.im/app/#/room/#cosmos_validators:matrix.org)[Validator Forum](https://forum.cosmos.network/c/validating)Promote your validator's website by posting on [this thread in our forum](https://forum.cosmos.network/t/validator-candidates-websites/127).Mailing ListSubscribe to our Validator's mailing list to get the latest news about testnets, documentation, timelines and more![Validator Mailing List](https://tendermint.us8.list-manage.com/subscribe?u=89d5a312be95ee3f0c9cf7ecd&id=a8e72383ff)
+## 什么是validator?
+
+[Cosmos Hub](https://cosmos.network/developers) 基于Tendermint](https://tendermint.com/)共识引擎, 它需要依赖一组验证人来负责向区块链上添加新的信息。验证人间需要在网络上广播经自己签名的投票消息来参与到共识中。
+
+验证人可以抵押自己持有的Atom，也可以接受委托人的Atom作为权益抵押。Cosmos Hub会有100个验证人，但是随着时间的推移，验证人数量会增长到300。在候选人中抵押数量最多的前100名将成为验证人。
+
+通过参与Tendermint公式，验证人和委托人可以分享抵押获利，区块奖励和手续费。最初，Cosmos网络的手续费为Photon，但是之后将逐渐扩大手续费白名单的范围。同时，验证人可以向委托人收取一定比例的佣金。
+
+如果一个验证人重复签名，经常离线或者不参与到链上治理，它抵押的Atom的一部分将被罚没（包括委托给它的）。处罚比例将由具体的规则确定。
+
+其他常见问题 FAQ. [Read the validator FAQ](https://cosmos.network/staking/validators-faq)
+
+## 成为一个验证人
+
+我们希望每一个验证人的候选人都能够独立的运营，因为越多人的参与，网络就越安全。验证人候选人应该提早开始准备。
+
+下面是一些对成为验证人的建议，请注意这些建议都不是必须的，因为验证人是按照抵押数量排序选定的。
+
+### 基本建议:
+
+1. 阅读FAQ
+  保持对官方的[FAQ](https://cosmos.network/staking/validators-faq)的关注。FAQ会经常更新。
+
+2. 参与到测试网络中
+  你应该追踪测试网络的进度。具体方式见📎
+
+3. 建立验证人网站：在上面公布相关信息让Atom持有人了解更多信息。然后在我们的 [论坛](https://forum.cosmos.network/t/validator-candidates-websites/127/3)也发布相关链接。
+
+4. 硬件要求： 目前还没有适合验证人密钥管理的云解决方案。由于这个原因，验证人必须设置受限访问保护的物理操作。 例如，建立安全的数据中心。
+
+  验证人应该期望为其数据中心位置提供冗余电源，连接和存储备份。 预计会为光纤，防火墙和交换机配备多个冗余网络设备，然后再配备冗余硬盘驱动器和故障切换的小型服务器。 
+
+  我们预计最初的网络需求会很低。 当前的测试网需要最少的资源。 随着网络的发展，带宽，CPU和内存需求将会增加。 需要足够大的硬盘用于存储多年的区块链历史记录。
+
+5. 秘钥管理 - HSM
+
+  我们必须要保证攻击者无法窃取验证者的密钥。 如果被窃取，那么验证人和委托者的权益就会处于危险之中。 硬件安全模块HSM是减轻此风险的重要策略。
+
+  HSM模块必须支持ed25519签名。 YubiHSM2支持ed25519，我们期望在12月份推出适配器库。 YubiHSM可以保护私钥，但不能保证在一个安全的环境下，它不会在同一个块上签名两次。
+
+  Tendermint团队还致力于扩展我们的Ledger Nano S应用程序以支持验证签名。 这个应用程序可以存储最近的块，并减轻双重签名攻击。
+
+6. DDOS 保护 (sentry node)
+
+   验证人负责确保网络能够承受DDoS攻击。
+
+   我们建议验证器在云中运行完整节点并配置其验证程序节点仅用于连接到这些完整节点。 这些完整的节点可以移动或应用基于云的DDoS保护来缓解DDoS攻击。
+
+   最后，直接与其他验证人建立连接可以确保你的节点不能通过基于互联网的攻击离线。
+
+   具体教程见附件：
+
+   希望建立哨兵节点的验证人应该从测试网络就开始参加。
+
+7. 管理
+
+   我们强烈建议验证人建立一个独立的公司，而不是由个人直接运行。 如果你认为可能需要额外的许可证，请寻求法律建议。 验证人可能希望制定服务条款和限制委托人的责任或让代理人自行承担风险。
