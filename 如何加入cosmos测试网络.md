@@ -110,4 +110,7 @@ basecli bond --stake=6steak --validator=45798afe9b0cd7a05b765107b744478f91848d18
 ```
 常见错误：
 
-sequence
+sequence expect:x but get:y
+
+
+
