@@ -58,7 +58,7 @@ Here is a quick example to get you off your feet:
 First, generate a new key with a name, and save the address:
 ```
 MYNAME=<your name>
-basecli keys new $MYNAME
+basecli keys add $MYNAME
 basecli keys list
 MYADDR=<your newly generated address>
 ```
@@ -123,8 +123,8 @@ gaiad init --home=$HOME/.gaiad2
 Replace the genesis file and toml file to another folder
 
 ```
-cp $HOME/.gaiad/config/genesis.json $HOME/.gaiad2/config
-cp $HOME/.gaiad/config/config.toml $HOME/.gaiad2/config
+cp $HOME/.gaiad1/config/genesis.json $HOME/.gaiad2/config
+cp $HOME/.gaiad1/config/config.toml $HOME/.gaiad2/config
 ```
 
 Get the node id of first node.
@@ -135,7 +135,6 @@ We need to also modify $HOME/.gaiad2/config.toml to set new seeds and ports. It 
 ```
 moniker ="your-name"
 proxy_app = "tcp://127.0.0.1:46668"
-moniker = "anonymous"
 fast_sync = true
 db_backend = "leveldb"
 log_level = "state:info,*:error"
@@ -151,7 +150,7 @@ Great, now that we've initialized the chains, we can start both nodes in the bac
 ```
 gaiad start --home=$HOME/.gaiad1  &> gaia1.log &
 NODE1_PID=$!
-gaia start --home=$HOME/.gaiad2  &> gaia2.log &
+gaiad start --home=$HOME/.gaiad2  &> gaia2.log &
 NODE2_PID=$!
 ```
 Note we save the PID so we can later kill the processes. Of course, you can peak at your logs with tail gaia1.log, or follow them for a bit with tail -f gaia1.log.
@@ -170,7 +169,7 @@ Check that we now have two accounts:
 ```
 basecli keys list 
 ```
-Then, we try to transfer some `strak` to another account:
+Then, we try to transfer some `steak` to another account:
 ```
 basecli send --amount=1000steak --to=$MYADDR2 --name=$NAME --chain-id=<CHAIN-ID> --node=tcp://localhost:46657 --sequence=0
 ```
