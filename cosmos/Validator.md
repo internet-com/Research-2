@@ -4,7 +4,7 @@
 
 ## 什么是validator?
 
-[Cosmos Hub](https://cosmos.network/developers) 基于Tendermint](https://tendermint.com/)共识引擎, 它需要依赖一组验证人来负责向区块链上添加新的信息。验证人间需要在网络上广播经自己签名的投票消息来参与到共识中。
+[Cosmos Hub](https://cosmos.network/developers) 基于[Tendermint](https://tendermint.com/)共识引擎, 它需要依赖一组验证人来负责向区块链上添加新的信息。验证人间需要在网络上广播经自己签名的投票消息来参与到共识中。
 
 验证人可以抵押自己持有的Atom，也可以接受委托人的Atom作为权益抵押。Cosmos Hub会有100个验证人，但是随着时间的推移，验证人数量会增长到300。在候选人中抵押数量最多的前100名将成为验证人。
 
@@ -12,7 +12,7 @@
 
 如果一个验证人重复签名，经常离线或者不参与到链上治理，它抵押的Atom的一部分将被罚没（包括委托给它的）。处罚比例将由具体的规则确定。
 
-其他常见问题 FAQ. [Read the validator FAQ](https://cosmos.network/staking/validators-faq)
+其他常见问题 FAQ. [Validator FAQ](https://cosmos.network/staking/validators-faq)
 
 ## 成为一个验证人
 
