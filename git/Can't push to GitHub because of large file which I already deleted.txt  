@@ -1,0 +1,3 @@
+Try:
+git filter-branch --index-filter 'git rm -r --cached --ignore-unmatch cosmos/debug.log' HEAD
+This will delete everything in the history of that file. The problem is that the file is present in the history.
