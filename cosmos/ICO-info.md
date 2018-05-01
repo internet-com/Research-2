@@ -2,8 +2,6 @@
 
 Cosmos在2017年4月完成了众筹， fundraiser.
 
-## 相关方
-
 **Note**: 相关内容存在于白皮书中。
 
 * Interchain Foundation (ICF)是一家注册在瑞士的非营利性基金会。它的主要职责是负责监督Cosmos相关软件及服务，Cosmos Essential Software and Services (CESS)，的研发和对于社区的支持。
@@ -17,6 +15,21 @@ Cosmos在2017年4月完成了众筹， fundraiser.
 * 在cosmos主网上线前，不会有atom流通。
 * AIB持有的atom在主网上线后会有两年的锁定期，但是参与ICO的投资人没有锁定期。
 * 在众筹开始时，atom的定价为 $0.10，战略合作伙伴的价格为 $0.075，早起投资人的价格为$0.085。
-* The ICF’s fundraising goal will be soft-capped at USD $10,000,000 with a greater hidden cap during the first 6 hours. For more details, see our blog post on the [atom supply and distribution](https://blog.cosmos.network/atom-supply-and-distribution-b4dd3404ff26).
-* After the Fundraiser, the total number of atoms distributed multiplied by 1/3 is inflated and allocated for the ICF, AIB, and the Initial Donors.
-* On Genesis day, the distribution of atoms will be split between:
+* ICF融资的上限大概在 $10,000,000美金左右，具体限制见一下博客： [atom supply and distribution](https://blog.cosmos.network/atom-supply-and-distribution-b4dd3404ff26).
+* 在众筹完毕后，将增发总量为所有募集到数量的1/3的atom分配给ICF，AIB和其他早期投资者。After the Fundraiser, the total number of atoms distributed multiplied by 1/3 is inflated and allocated for the ICF, AIB, and the Initial Donors.
+* 在主网上线的时候，atom的分配如下：
+  * ICF (10%)
+  * AIB (10%)
+  * 早期投资人 (5%)
+  * 所有参与募资的人员 (75%)
+* 在完成募资后，所有atom的持有者，包括ICF和AIB都需要参与到委托验证的过程中。前100名将作为验证人，具体信息将在主网上线前公布。
+* 每个验证人都必须参与治理，否则就会面临失去活跃度并最终解绑的风险。 将atom委托给这些验证人的委托人也将同样让他们的委托原子失去活跃度并最终解绑的风险。
+* atom每年通胀的比例将随着随着绑定atom总量而变化。若达到了期望的2/3，则通胀为7%。通胀出的atom将在验证人和委托人间分配。
+* atom并不是作为一个交换媒介或者储值代币设计的。
+* 解绑时间在一个月左右
+* 因为不参与绑定的或不活跃的atom的价值会随着通胀而逐渐减少，所以atom并不适合作为一种交换媒介或者储值代币
+* 作为权益抵押而绑定的atom存在可能被罚没的风险。所以验证人需要做好防黑客攻击的行为。委托人也要做好尽职调查，保障自己的财产安全
+* 代币是区块链上的虚拟概念。 所有提到的代币，像atom一样，它们并不是实体对象，都是实际价值的近似值。 正如我们在ETH / ETC硬分叉上所观察到的那样，社区的分裂可能导致账本的分裂。 此外，没有中心机构负责区块链的维护。维护atom不是任何人的责任，甚至不是Cosmos network基金会。 该软件可能会出现问题，甚至其基础理论也可能存在缺陷，从而导致参与Cosmos网络的所有参与者都感到困惑，经历严重的网络故障。
+* ICF，AIB，所有募资参与者以及任何atom代币拥有者或任何Cosmos网络参与者都理解并接受Cosmos网络仍处于早期发展阶段，其应用具有实验性，具有相当的运营，技术和监管，声誉风险。此处所包含的内容均不代表任何形式的担保。Cosmos网络的所有参与者都明白并认同，在适用法律允许的最大范围内，任何宇宙网络参与者都不会让任何开发商，承包商，第三方或任何其他宇宙网络参与者承担任何及所有造成的损害或伤害通过或与使用或无法使用Cosmos Network和CESS在任何司法管辖区的任何诉讼因由下有关，包括但不限于违反保证，违反合同，疏忽的行为，也不开发商，承包商，第三方或Cosmos网络参与者均不承担任何因使用或无法使用而产生的任何间接，附带，特殊，模范或相应的损害赔偿，包括利润损失，商誉或数据损失Cosmos网络和CESS
+* 在满足Cosmos Constitution的前提下，任何atom持有人可以fork代码
+* 所有验证人和委托人必须遵守Cosmos Constitution
