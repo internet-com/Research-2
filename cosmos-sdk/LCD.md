@@ -6,7 +6,7 @@ Tendermint为轻量级客户端应用程序提供独特的速度和安全属性�
 
 ## 概览
 
-The objective of the light client protocol is to get a轻客户端协议的意图在于获得一个最近的 [block hash](https://github.com/tendermint/tendermint/blob/master/docs/specification/block-structure.html#block-hash) 对应的[commit](https://github.com/tendermint/tendermint/blob/master/docs/specification/validators.html#committing-a-block) ，它包含了大多数验证人的签名集。依据此，所有应用状态可以获得 [默克尔证明](https://github.com/tendermint/tendermint/blob/master/docs/specification/merkle.html#iavl-tree).
+轻客户端协议的意图在于获得一个最近的 [block hash](https://github.com/tendermint/tendermint/blob/master/docs/specification/block-structure.html#block-hash) 对应的[commit](https://github.com/tendermint/tendermint/blob/master/docs/specification/validators.html#committing-a-block) ，它包含了大多数验证人的签名集。依据此，所有应用状态可以获得 [默克尔证明](https://github.com/tendermint/tendermint/blob/master/docs/specification/merkle.html#iavl-tree).
 
 ## 特性
 

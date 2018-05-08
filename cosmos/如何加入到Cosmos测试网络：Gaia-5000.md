@@ -69,19 +69,19 @@ rm -rf $HOME/.gaiad/config/gentx
 
 ```
 mkdir $HOME/.gaiad/config/gentx
-go get github.com/cosmos/testnet
+go get github.com/cosmos/testnets
 ```
 
 将配置文件拷贝到默认路径下
 
 ```
-scp -a $GOPATH/src/github.com/cosmos/testnets/gaia-5000/. $HOME/.gaiad/config/gentx
+cp -a $GOPATH/src/github.com/cosmos/testnets/gaia-5000/. $HOME/.gaiad/config/gentx
 ```
 
 生成genesis.json 和 config.toml 文件:
 
 ```
-gaiad init gen-txs -o --chain-id=gaia-5000
+gaiad init --gen-txs -o --chain-id=gaia-5000 --home=/mnt/gaia_node/gaia-5000
 ```
 
 然后可以通过修改config.toml文件中的moniker字段来指定自己的名称。
