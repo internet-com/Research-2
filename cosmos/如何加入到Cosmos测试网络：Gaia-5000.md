@@ -115,6 +115,8 @@ gaiacli account $MYADDR
 在查询到账户余额不为0后，通过执行以下命令，成为验证人之一：
 
 ```
+#获得节点的pubkey
+gaiad show_validator
 gaiacli delegate --address-candidate=<your-address> --address-delegator=<your-address> --amount=10steak --name=<your-name> --chain-id=gaia-5000 
 ```
 
